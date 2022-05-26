@@ -6,7 +6,7 @@ Wither use live server plugin from visual studio code or:
 
 # Working environment
 
-Based on https://www.learnhowtoprogram.com/user-interfaces/responsive-design-development-environments/maintaining-organized-projects
+Based on https://www.learnhowtoprogram.com/user-interfaces/responsive-design-development-environments
 
 ## Install npm
 

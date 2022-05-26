@@ -1,11 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+
 module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
+    clean: true,
+    assetModuleFilename: "assets/[name][ext]",
   },
 
   devtool: "eval-source-map",
@@ -30,6 +33,7 @@ module.exports = {
           "sass-loader",
         ],
       },
+      /*
       {
         test: /\.(png|jpg|gif)$/i,
         use: [
@@ -42,6 +46,17 @@ module.exports = {
         ],
         type: "javascript/auto",
       },
+      */
+      /*
+      {
+        test: /\.jpg$/,
+        type: "asset/source",
+      },
+      */
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
     ],
   },
 
@@ -50,6 +65,14 @@ module.exports = {
       inject: "body",
       template: "./src/index.html",
       filename: "index.html",
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      filename: "contact.html",
+      template: "./src/contact.html",
       minify: {
         removeComments: true,
         collapseWhitespace: true,
