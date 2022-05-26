@@ -2,7 +2,8 @@
 
 `npm run build`
 Wither use live server plugin from visual studio code or:
-`npm run start` (The open is optional but starts the browser)
+`npm run start` (The open is optional -> creates a server and starts the browser)
+https://www.robinwieruch.de/minimal-react-webpack-babel-setup/ -> noch anschauen für react
 
 # Working environment
 
